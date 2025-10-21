@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produksi Perikanan Budidaya</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #eef5ff, #fff);
+      margin: 0;
+      padding: 0;
+      color: #003366;
+      text-align: center;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 1rem;
+    }
+    h1 {
+      margin: 0.5rem 0;
+    }
+    .search-box {
+      margin: 1rem auto;
+      width: 80%;
+      max-width: 400px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .provinsi-container {
+      width: 90%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .provinsi-button {
+      display: block;
+      width: 100%;
+      background-color: #f2f8ff;
+      border: 1px solid #003366;
+      border-radius: 10px;
+      margin: 0.4rem 0;
+      padding: 0.8rem;
+      font-size: 1rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .provinsi-button:hover {
+      background-color: #d9ecff;
+    }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PRODUKSI PERIKANAN BUDIDAYA</h1>
+    <p>Direktorat Jenderal Perikanan Budidaya</p>
+  </header>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Cari provinsi..." onkeyup="searchProvinsi()" />
+  </div>
+
+  <div class="provinsi-container" id="provinsiList">
+    <!-- Provinsi berdasarkan kode Kemendagri -->
+    <button class="provinsi-button" onclick="openLink('https://example.com/aceh')">11. Aceh</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/sumut')">12. Sumatera Utara</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/sumbar')">13. Sumatera Barat</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/riau')">14. Riau</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/jambi')">15. Jambi</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/sumsel')">16. Sumatera Selatan</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/bengkulu')">17. Bengkulu</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/babel')">19. Kep. Bangka Belitung</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/kepriau')">21. Kep. Riau</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/jakarta')">31. DKI Jakarta</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/jabar')">32. Jawa Barat</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/jateng')">33. Jawa Tengah</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/jatim')">35. Jawa Timur</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/banten')">36. Banten</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/bali')">51. Bali</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/ntb')">52. Nusa Tenggara Barat</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/ntt')">53. Nusa Tenggara Timur</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/kalbar')">61. Kalimantan Barat</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/kaltim')">64. Kalimantan Timur</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/kalteng')">62. Kalimantan Tengah</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/kalsel')">63. Kalimantan Selatan</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/kalut')">65. Kalimantan Utara</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/sulut')">71. Sulawesi Utara</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/sulteng')">72. Sulawesi Tengah</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/sulsel')">73. Sulawesi Selatan</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/sultra')">74. Sulawesi Tenggara</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/gorontalo')">75. Gorontalo</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/sulbar')">76. Sulawesi Barat</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/maluku')">81. Maluku</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/malut')">82. Maluku Utara</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/papua')">91. Papua</button>
+    <button class="provinsi-button" onclick="openLink('https://example.com/papbar')">92. Papua Barat</button>
+  </div>
+
+  <footer>
+    <p>© 2025 Direktorat Jenderal Perikanan Budidaya | KKP</p>
+  </footer>
+
+  <script>
+    function searchProvinsi() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const buttons = document.querySelectorAll(".provinsi-button");
+      buttons.forEach(btn => {
+        const text = btn.textContent.toLowerCase();
+        btn.style.display = text.includes(input) ? "block" : "none";
+      });
+    }
+
+    function openLink(url) {
+      window.open(url, "_blank");
+    }
+  </script>
+
+</body>
+</html>
